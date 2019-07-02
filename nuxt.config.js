@@ -17,6 +17,10 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  
+  css: [
+    '~/sass/index.scss',
+  ],
 
   /*
   ** Customize the progress-bar color

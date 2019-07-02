@@ -1,20 +1,15 @@
 <template>
-  <section>
-    <div>
-      <Title/>
-      <div class="links">
-        <nuxt-link to="/about">About</nuxt-link>
-      </div>
-    </div>
-  </section>
+  <div>
+    <Header />
+  </div>
 </template>
 
 <script>
-import Title from '~/components/Title.vue'
+import Header from '~/components/Header.vue'
 
 export default {
   components: {
-    Title
+    Header
   }
 }
 </script>
