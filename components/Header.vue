@@ -56,6 +56,14 @@
                 line-height: 26px;
             }
         }
+
+        @media screen and (max-width: 768px) {
+            &-main {
+                width: 100%;
+                margin-top: 4.5rem;
+                text-align: center;
+            }
+        }
     }
 </style>
 

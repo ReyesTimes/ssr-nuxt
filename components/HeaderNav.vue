@@ -27,5 +27,9 @@
                 font-size: 1.25rem;
             }
         }
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
     }
 </style>
