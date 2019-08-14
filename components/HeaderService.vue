@@ -6,22 +6,21 @@
                 <HeaderNav />
             </div>
             <div class="header-main">
-                <h1>Defensa <br class="md:hidden">y asesoria legal</h1>
-                <p>Damos asesoría y resolvemos tus problemas<br> para el crecimiento y desarrollo de tus negocios.</p>
+                <h1>Servicios <br>Profesionales</h1>
             </div>
         </div>
     </header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .header {
-        background-image: url("../static/img/inicio_img.jpg");
-        box-shadow: inset 0 0 0 2000px rgba(14, 14, 14, 0.4);
+        background: url("../static/img/servicios_img.jpg");
+        box-shadow: inset 0 0 0 2000px rgba(14, 14, 14, 0.45);
         background-repeat:no-repeat;
         background-size: cover; 
         background-position:center;
         padding: 1.5rem 0 3rem 0;
-        min-height: 580px;
+        min-height: 450px;
         color: #fff;
 
         &-wrapper {
@@ -60,10 +59,16 @@
         }
 
         @media screen and (max-width: 768px) {
+            min-height: 375px;
             &-main {
                 width: 100%;
                 margin-top: 4.5rem;
                 text-align: center;
+
+                h1 {
+                    font-size: 2rem;
+                    line-height: 1.5;
+                }
             }
         }
     }
@@ -77,7 +82,7 @@ export default {
     components: {
         HeaderLogo,
         HeaderNav
-    },
+    }
 }
 </script>
 

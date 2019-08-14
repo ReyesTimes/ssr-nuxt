@@ -1,0 +1,13 @@
+button, a.btn {
+    background-color: #BE8210;
+    border: none;
+    padding: 1rem 3.5rem;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    
+    @media only screen and (max-width: 992px) {
+        padding: 1rem 1.5rem;
+    }
+}
