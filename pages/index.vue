@@ -19,6 +19,8 @@ import HomeValues from '~/components/HomeValues.vue'
 
 import Contact from '~/components/Contact.vue'
 
+import axios from 'axios';
+
 export default {
   components: {
     Header,
@@ -31,7 +33,7 @@ export default {
     return {
       title: 'Mi titulo'
     }
-  }
+  },
 }
 </script>
 

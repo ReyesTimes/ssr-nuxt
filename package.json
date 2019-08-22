@@ -11,8 +11,14 @@
     "now-build": "nuxt generate"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.0.0"
+    "express": "^4.17.1",
+    "nodemailer": "^6.3.0",
+    "nuxt": "^2.0.0",
+    "redirect-ssl": "^1.4.1",
+    "validator": "^11.1.0",
+    "xss-filters": "^1.2.7"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",

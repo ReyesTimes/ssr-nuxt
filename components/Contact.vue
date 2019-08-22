@@ -27,14 +27,14 @@
                         <label for="name">
                             Nombre
                         </label>
-                        <input type="text" id="name" name="name" v-model="form.name" />
+                        <input type="text" id="name" name="name" v-model="form.name" @keyup="changeField($event, 'name')"/>
                         <p class="error" v-if="errors.name">{{ errors.name }}</p>
                     </div>
                     <div class="form-group">
                         <label for="email">
                             Correo eléctronico
                         </label>
-                        <input type="email" id="email" name="email" v-model="form.email"/>
+                        <input type="email" id="email" name="email" v-model="form.email" @keyup="changeField($event, 'email')"/>
                         <p class="error" v-if="errors.email">{{ errors.email }}</p>
                     </div>
                     <div class="form-group">
@@ -42,14 +42,13 @@
                             Télefono (Opcional)
                         </label>
                         <input type="tel" id="tel" name="tel" v-model="form.telephone"/>
-                        <p class="error" v-if="errors.telephone">{{ errors.telephone }}</p>
                     </div>
                     <div class="form-group">
                         <label for="info">
                             Cuentanos en que te podemos ayudar.
                         </label>
-                        <textarea name="info" rows="5" v-model="form.description"></textarea>
-                        <p class="error" v-if="errors.description">{{ errors.telephone }}</p>
+                        <textarea name="info" rows="5" v-model="form.description" @keyup="changeField($event, 'description')"></textarea>
+                        <p class="error" v-if="errors.description">{{ errors.description }}</p>
                     </div>
                     <button type="submit" class="btn">Enviar</button>
                 </form>
@@ -59,27 +58,25 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
             isSuccess: false,
             form: {
-              name: '',
-              email: '',
-              telephone: '',
-              description: '',  
-            },
-            errors: {
                 name: '',
                 email: '',
                 telephone: '',
                 description: '',  
+            },
+            errors: {
+                name: '',
+                email: '',
+                description: '',  
             }
         }
     },
-
-    created() {
-        },
 
     methods: {
         sendEmail() {
@@ -92,12 +89,39 @@ export default {
             }
 
             if (!this.form.name) {
-                
+                isAllowed = false;
+                this.$set(this.errors, 'name', 'No has ingresado tú nombre');
+            }
+            
+            if (!this.form.description) {
+                isAllowed = false;
+                this.$set(this.errors, 'description', 'No has ingresado ningún mensaje');
             }
 
             if (isAllowed) {
-                this.isSuccess = true;
+                this.sendContactInfo();
             }
+        },
+
+        changeField(event, type) {
+            if (event.target.value) {
+                this.$set(this.errors, type, '');
+            }
+        },
+
+        sendContactInfo() {
+            axios.post('https://mulantimes.herokuapp.com/', {
+                name: this.form.name,
+                email: this.form.email,
+                telephone: this.form.telephone,
+                description: this.form.description,
+            })
+            .then((res) => {
+                this.isSuccess = true;
+            })
+            .catch((error) => {
+                console.log(error);
+            })
         }
     }
 }
@@ -206,6 +230,10 @@ export default {
                 width: 100%;
                 text-align: center;
             }
+        }
+
+        .error {
+            color: #BE8210;
         }
     }
 </style>

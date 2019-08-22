@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Modal />
     <Header />
     <main>
         <section class="service-list">
@@ -11,35 +12,35 @@
             <ul>
               <li>
                 Derecho corporativo <br>
-                <a href="#">Ver más</a>
+                <a href="#" @click.prevent="openDetailModal('corporativo')">Ver más</a>
               </li>
               <li>
                 Derecho Fiscal <br>
-                <a href="#">Ver más</a>
+                <a href="#" @click.prevent="openDetailModal('fiscal')">Ver más</a>
               </li>
               <li>
                 Comercio Exterior y Aduanero <br>
-                <a href="#">Ver más</a>
+                <a href="#" @click.prevent="openDetailModal('exterioraduanero')">Ver más</a>
               </li>
               <li>
                 Derecho Administrativo <br>
-                <a href="#">Ver más</a>
+                <a href="#" @click.prevent="openDetailModal('administrativo')">Ver más</a>
               </li>
               <li>
                 Amparos <br>
-                <a href="#">Ver más</a>
+                <a href="#" @click.prevent="openDetailModal('amparos')">Ver más</a>
               </li>
               <li>
                 Propiedad Intelectual <br>
-                <a href="#">Ver más</a>
+                <a href="#" @click.prevent="openDetailModal('intelectual')">Ver más</a>
               </li>
               <li>
                 Contabilidad <br>
-                <a href="#">Ver más</a>
+                <a href="#" @click.prevent="openDetailModal('contabilidad')">Ver más</a>
               </li>
               <li>
                 Otros Servicios <br>
-                <a href="#">Ver más</a>
+                <a href="#" @click.prevent="openDetailModal('otros')">Ver más</a>
               </li>
             </ul>
           </div>
@@ -302,11 +303,20 @@
 <script>
 import Header from '~/components/HeaderService.vue'
 import Contact from '~/components/Contact.vue'
+import Modal from '~/components/Modal.vue'
 
 export default {
   components: {
     Header,
     Contact,
+    Modal,
+  },
+
+  methods: {
+    openDetailModal(type) {
+      this.$store.commit('SWITCH_MODAL_STATE');
+      this.$store.commit('CHANGE_TYPE_MODAL', type);
+    }
   }
 }
 </script>
