@@ -41,13 +41,7 @@
               </button>
             </li>
             <li>
-              Perla Santillan
-              <button>
-                Conocer
-              </button>
-            </li>
-            <li>
-              Perla Santillan
+              David Sierra
               <button>
                 Conocer
               </button>
