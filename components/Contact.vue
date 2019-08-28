@@ -19,7 +19,7 @@
                     </figure>
                     <h4>¡Gracias!</h4>
                 </div>
-                <p>En la brevedad nos contactaremos contigo para hablar más sobre tu caso.</p>
+                <p>A la brevedad nos comunicaremos contigo.</p>
             </div>
             <div v-if="!isSuccess">
                 <form @submit.prevent="sendEmail" novalidate>
