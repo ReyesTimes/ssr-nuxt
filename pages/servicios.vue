@@ -11,7 +11,7 @@
             <p>Ofrecemos servicios profesionales para resolver cualquier problemática y/o duda relacionada con tus negocios en las áreas de:</p>
             <ul>
               <li>
-                Derecho corporativo <br>
+                Derecho Corporativo <br>
                 <a href="#" @click.prevent="openDetailModal('corporativo')">Ver más</a>
               </li>
               <li>
@@ -27,7 +27,7 @@
                 <a href="#" @click.prevent="openDetailModal('administrativo')">Ver más</a>
               </li>
               <li>
-                Amparos <br>
+                Amparo <br>
                 <a href="#" @click.prevent="openDetailModal('amparos')">Ver más</a>
               </li>
               <li>

@@ -7,8 +7,8 @@
 
                 <div class="info-contact">
                     <ul>
-                        <li>correo@ssr.com</li>
-                        <li>+52 1 55 5555 5555</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i>contacto@ssrefiscales.com.mx</li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i> +52 55 3419 3659 | +52 1 55 3995 2380</li>
                     </ul>
                 </div>
             </div>
@@ -153,6 +153,17 @@ export default {
 
             li {
                 margin-bottom: 8px;
+
+                &:last-child {
+                    i {
+                        margin-right: .25rem;
+                    }
+                }
+            }
+
+            i {
+                color: #BE8210;
+                margin-right: .5rem;
             }
         }
 

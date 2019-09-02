@@ -8,7 +8,7 @@
             </li>
             <li class="service">
                 <img src="~/static/img/p_intelectual.svg" alt="Derecho fiscal"/>
-                <span>Propiedad intelectual</span>
+                <span>Propiedad Intelectual</span>
             </li>
             <li class="service">
                 <img src="~/static/img/c_exterior.svg" alt="Derecho fiscal"/>
@@ -16,7 +16,7 @@
             </li>
             <li class="service">
                 <img src="~/static/img/aduanero.svg" alt="Derecho fiscal"/>
-                <span>Aduanero</span>
+                <span>Derecho Aduanero</span>
             </li>
             <li class="service">
                 <img src="~/static/img/d_administrativo.svg" alt="Derecho fiscal"/>
@@ -28,7 +28,7 @@
             </li>
             <li class="service">
                 <img src="~/static/img/amparos.svg" alt="Derecho fiscal"/>
-                <span>Amparos</span>
+                <span>Amparo</span>
             </li>
         </ul>
         <div class="container-link">

@@ -5,7 +5,7 @@
         <section class="about">
           <div class="wrapper">
             <h2>Somos SSR</h2>
-            <p class="subtitle">Abogados & Contadores Especialistas</p>
+            <p class="subtitle">Especalistas Fiscales</p>
             <p class="content">
               Un equipo jurídico-contable joven y dinámico capaz de ofrecer servicios profesionales para resolver cualquier problemática y/o duda que nuestros clientes tengan frente a las autoridades fiscales, administrativas, jurisdiccionales y judiciales, todo con la finalidad de aportar al crecimiento y desarrollo de negocios y empresas.
             </p>
@@ -17,13 +17,21 @@
               <div class="text-center element">
                 <div class="child">
                   <h3 class="title text-uppercase">Misión</h3>
-                  <p class="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quibusdam distinctio tenetur, accusamus porro reprehenderit provident aliquam repellendus est laudantium dolores? A blanditiis placeat quod porro eum et repudiandae animi?</p>
+                  <p class="content">Somos un equipo jurídico-contable, caracterizado por ser joven y dinámico, que presta servicios profesionales y personalizados con la finalidad de ofrecer soluciones legales integrales acorde a la necesidad de nuestros clientes.</p>
+                  <p class="content">
+                    SSR Especialistas Fiscales, S.C., se mantiene siempre actualizado sobre las materias de las que es especialista, todo ello para superar en todo momento las expectativas de nuestros clientes.
+                  </p>
                 </div>
               </div>
               <div class="text-center element">
                 <div class="child">
                   <h3 class="title text-uppercase">Visión</h3>
-                  <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ut nostrum tempore accusantium rerum quia excepturi, magnam sint sapiente quam pariatur exercitationem delectus molestiae perferendis provident labore fuga repellat vitae.</p>
+                  <p class="content">
+                    En SSR Especialistas Fiscales S.C., somos una firma legal que aspira a ser un grupo de excelencia en la prestación de los distintos servicios jurídicos que ofertamos, por ello, nuestro personal está debidamente capacitado para asesorar e implementar aspectos legales para la prevención y resolución de los diversos conflictos a los que se pueden afrontar las diferentes actividades económicas de nuestros clientes.
+                  </p>
+                  <p class="content">
+                    Buscamos captar cada día más clientes de diversas partes de la república, para así prestar nuestros servicios en todo el país y llegar a ser uno de los despachos más reconocidos en la república mexicana.
+                  </p>
                 </div>
               </div>
             </div>
@@ -35,13 +43,19 @@
           </div>
           <ul>
             <li>
-              Perla Santillan
+              Perla Yoliztli Santillán Sánchez
               <button>
                 Conocer
               </button>
             </li>
             <li>
-              David Sierra
+              David Sierra Romero
+              <button>
+                Conocer
+              </button>
+            </li>
+            <li>
+              Samantha
               <button>
                 Conocer
               </button>
@@ -154,6 +168,7 @@
       .child {
         border: 1px solid #BE8210;
         padding: 40px;
+        height: 100%;
       }
 
       .title {
