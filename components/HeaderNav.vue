@@ -9,7 +9,7 @@
                     <nuxt-link to="/nosotros">Nosotros</nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link to="/services">Contacto</nuxt-link>
+                    <a href="#contacto">Contacto</a>
                 </li>
             </ul>
         </nav>

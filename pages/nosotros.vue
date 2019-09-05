@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Modal />
     <Header />
     <main>
         <section class="about">
@@ -17,7 +18,7 @@
               <div class="text-center element">
                 <div class="child">
                   <h3 class="title text-uppercase">Misión</h3>
-                  <p class="content">Somos un equipo jurídico-contable, caracterizado por ser joven y dinámico, que presta servicios profesionales y personalizados con la finalidad de ofrecer soluciones legales integrales acorde a la necesidad de nuestros clientes.</p>
+                  <p class="content">Prestar servicios profesionales y personalizados con la finalidad de ofrecer soluciones legales integrales acorde a la necesidad de nuestros clientes, sujetándonos en todo momento a los principios de la firma.</p>
                   <p class="content">
                     SSR Especialistas Fiscales, S.C., se mantiene siempre actualizado sobre las materias de las que es especialista, todo ello para superar en todo momento las expectativas de nuestros clientes.
                   </p>
@@ -43,20 +44,20 @@
           </div>
           <ul>
             <li>
-              Perla Yoliztli Santillán Sánchez
-              <button>
+              Perla Santillán
+              <button @click.prevent="openDetailModal('perla')">
                 Conocer
               </button>
             </li>
             <li>
-              David Sierra Romero
-              <button>
+              David Sierra
+              <button @click.prevent="openDetailModal('david')">
                 Conocer
               </button>
             </li>
             <li>
-              Samantha
-              <button>
+              Samantha Escobar
+              <button @click.prevent="openDetailModal('samantha')">
                 Conocer
               </button>
             </li>
@@ -66,6 +67,8 @@
     </main>
   </div>
 </template>
+
+
  
 <style lang="scss" scoped>
   .about {
@@ -126,9 +129,21 @@
         text-align: center;
         min-height: 125px;
         display: flex;
+        width: 30%;
+        line-height: 33px;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+
+        button {
+          margin-top: 12px;
+        }
+      }
+
+      @media only screen and (max-width: 992px) {
+        li {
+          width: auto;
+        }
       }
     }
 
@@ -207,11 +222,21 @@
 <script>
 import Header from '~/components/HeaderAbout.vue'
 import Contact from '~/components/Contact.vue'
+import Modal from '~/components/Modal.vue'
 
 export default {
   components: {
     Header,
     Contact,
+    Modal
+  },
+
+  methods: {
+    openDetailModal(type) {
+      console.log(':D', type)
+      this.$store.commit('SWITCH_MODAL_STATE');
+      this.$store.commit('CHANGE_TYPE_MODAL', type);
+    }
   }
 }
 </script>

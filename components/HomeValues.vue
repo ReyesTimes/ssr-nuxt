@@ -15,10 +15,10 @@
                 <img src="~/static/img/comunicacion.svg" alt="Comunicación es uno de nuestros principios"/>
             </li>
         </ul>
-        <div class="container-links">
+        <!--<div class="container-links">
             <button>Conoce nuestros casos de éxito</button>
             <button>Noticias Fiscales</button>
-        </div>
+        </div>-->
     </section>
 </template>
 
