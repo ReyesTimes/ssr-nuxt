@@ -1,4 +1,6 @@
 const pkg = require('./package')
+import Mode from "frontmatter-markdown-loader/mode"
+const path = require('path')
 
 module.exports = {
   mode: 'universal',
@@ -8,6 +10,10 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+    // HTML property attribute
+    htmlAttrs: {
+      lang: 'es-mx',
+    },
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
@@ -17,6 +23,19 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+
+  modules: [
+    '@nuxtjs/sitemap'
+  ],
+
+  sitemap: {
+    hostname: 'https://ssrefiscales.com.mx',
+    routes: [
+      '/',
+      '/servicios',
+      '/nosotros',
+    ],
   },
   
   css: [
@@ -32,4 +51,26 @@ module.exports = {
   */
   loading: { color: '#fff' },
   
+  build: {
+    extend (config) {
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        include: path.resolve(__dirname, 'blog'),
+        options: {
+          mode: [Mode.VUE_RENDER_FUNCTIONS],
+          vue: {
+            root: "dynamicMarkdown"
+          }
+        }
+      });
+    }
+  },
+  /* Views Generate */
+  generate: {
+    routes: [
+      '/articulos/mi-articulo',
+      '/articulos/bad-man-loco',
+    ]
+  }
 }

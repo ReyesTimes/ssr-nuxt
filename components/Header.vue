@@ -17,6 +17,7 @@
     .header {
         background-image: url("../static/img/inicio_img.jpg");
         box-shadow: inset 0 0 0 2000px rgba(14, 14, 14, 0.4);
+        background-color: #000;
         background-repeat:no-repeat;
         background-size: cover; 
         background-position:center;
