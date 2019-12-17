@@ -3,12 +3,12 @@
     <Header />
     <main>
       <article class="wrapper wrapper-top">
-        <h2 class="author">{{ author }}</h2>
-        <span class="date">{{ date }}</span>
-        <DynamicMarkdown
-          :render-func="renderFunc"
-          :static-render-funcs="staticRenderFuncs"
-        />
+        <div class="head-section">
+          <h2 class="author">{{ author }}</h2>
+          <span class="date">{{ date }}</span>
+        </div>
+
+        <div v-html="content"></div>
       </article>
     </main>
     <Footer />
@@ -16,6 +16,10 @@
 </template>
 
 <style lang="scss">
+.head-section {
+  margin-bottom: 1.75rem;
+}
+
 .author {
   font-weight: bold;
   font-size: 20px;
@@ -29,10 +33,10 @@
 </style>
 
 <script>
-import Header from '~/components/Header.vue';
-import Footer from '~/components/Footer.vue';
+import Header from "~/components/Header.vue";
+import Footer from "~/components/Footer.vue";
 
-import DynamicMarkdown from '~/components/Markdown/DynamicMarkDown.vue';
+import DynamicMarkdown from "~/components/Markdown/DynamicMarkDown.vue";
 
 export default {
   async asyncData({ params, app }) {
@@ -40,19 +44,13 @@ export default {
     const attr = fileContent.attributes;
 
     return {
-      attr: fileContent,
       title: attr.title,
       date: attr.date,
       author: attr.author,
       description: attr.description,
       id: attr.id,
-      renderFunc: fileContent.vue.render,
-      staticRenderFuncs: fileContent.vue.staticRenderFns
+      content: fileContent.html
     };
-  },
-
-  mounted() {
-    console.log(this.attr);
   },
 
   components: {
