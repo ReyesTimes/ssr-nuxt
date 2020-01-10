@@ -338,6 +338,7 @@ export default {
     openDetailModal(type) {
       this.$store.commit("SWITCH_MODAL_STATE");
       this.$store.commit("CHANGE_TYPE_MODAL", type);
+      this.$store.commit("TYPE_JSON", true);
     }
   }
 };

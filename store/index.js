@@ -1,6 +1,7 @@
 export const state = () => ({
     showModal: false,
-    typeModal: ''
+    typeModal: '',
+    typeJson: false,
 });
 
 export const mutations = {
@@ -10,5 +11,9 @@ export const mutations = {
 
     CHANGE_TYPE_MODAL(state, type) {
         state.typeModal = type;
+    },
+
+    TYPE_JSON(state, value = false) {
+        state.typeJson = value;
     },
 };

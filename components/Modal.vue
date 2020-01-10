@@ -4,7 +4,12 @@
       <a href="#" class="close" @click.prevent="closeModal">✖</a>
 
       <div class="content">
-        <div v-if="isLoading" class="skeleton-modal" aria-live="polite" aria-busy="true">
+        <div
+          v-if="isLoading"
+          class="skeleton-modal"
+          aria-live="polite"
+          aria-busy="true"
+        >
           <div class="title"></div>
           <div class="block"></div>
           <div class="block"></div>
@@ -39,13 +44,20 @@ export default {
   watch: {
     typeModal(personName) {
       if (personName) {
-        this.isLoading = true;
-        axios
-          .get(`https://mulantimes.herokuapp.com/personal/${personName}`)
-          .then(({ data: { data: info } }) => {
-            this.isLoading = false;
-            this.info = { ...info };
+        if (this.$store.state.typeJson) {
+          import(`@/static/json/${personName}.json`).then(res => {
+            this.info = { ...res };
+            this.$store.commit("TYPE_JSON");
           });
+        } else {
+          this.isLoading = true;
+          axios
+            .get(`https://mulantimes.herokuapp.com/personal/${personName}`)
+            .then(({ data: { data: info } }) => {
+              this.isLoading = false;
+              this.info = { ...info };
+            });
+        }
       }
     }
   },
