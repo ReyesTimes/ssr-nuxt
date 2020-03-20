@@ -1,4 +1,4 @@
-<script lang="js">
+<!--<script lang="js">
 import InlineCode from './InlineCode.vue'
 import hljs from 'highlight.js/lib/highlight'
 import javascript from 'highlight.js/lib/languages/javascript'
@@ -32,4 +32,4 @@ export default {
     this.$options.staticRenderFns = this.staticRenderFuncs
   }
 }
-</script>
+</script>-->

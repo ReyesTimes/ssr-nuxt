@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <main>
+    <!--<main>
       <article class="wrapper wrapper-top">
         <div class="head-section">
           <h2 class="author">{{ author }}</h2>
@@ -10,7 +10,7 @@
 
         <div v-html="content"></div>
       </article>
-    </main>
+    </main>-->
     <Footer />
   </div>
 </template>
@@ -32,7 +32,7 @@
 }
 </style>
 
-<script>
+<!--<script>
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
 
@@ -59,4 +59,4 @@ export default {
     DynamicMarkdown
   }
 };
-</script>
+</script>-->
